@@ -391,7 +391,7 @@ if st.session_state.get("authentication_status"):
                 new_fluid_name = st.text_input("Nome do Fluido")
                 c1f, c2f, c3f = st.columns(3)
                 new_fluid_density = c1f.number_input("Densidade (ρ) [kg/m³]", format="%.2f", min_value=0.0)
-                new_fluid_viscosity = c2f.number_input("Viscosidade (ν) [m²/s]", format="%.4e", min_value=0.0)
+                new_fluid_viscosity = c2f.number_input("Viscosidade (ν) [m²/s]", min_value=0.0, step=1e-9, format="%g")
                 new_fluid_vapor_pressure = c3f.number_input("Pressão Vapor (kPa)", format="%.2f", min_value=0.0)
                 submitted_fluid = st.form_submit_button("Adicionar Fluido")
                 if submitted_fluid:
